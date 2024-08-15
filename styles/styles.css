@@ -187,7 +187,7 @@ nav ul li a:hover {
 
 .editor-area textarea {
     width: 100%;
-    height: calc(100% - 50px); /* Adjust height to leave space for the save button */
+    height: 50%; /* Adjust height to leave space for the save button */
     border: 1px solid #ddd;
     border-radius: 4px;
     border: transparent;
@@ -216,6 +216,47 @@ nav ul li a:hover {
 
 .editor-area button:hover {
     background-color: #0056b3;
+}
+
+.highlight-def {
+    color: purple;
+    font-weight: bold;
+}
+
+.highlight-class {
+    color: rgb(24, 50, 196);
+    font-weight: bold;
+}
+
+.highlight-self {
+    color: rgb(89, 108, 214);
+    font-weight: bold;
+}
+
+.highlight-pass {
+    color: rgb(174, 80, 80);
+    font-weight: bold;
+}
+
+.tab-space {
+    display: inline-block;
+    width: 4em; /* Width of a tab space; adjust as needed */
+}
+
+.generated {
+    width: 100%;
+    height: 50%; /* Adjust height to leave space for the save button */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border: transparent;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    scrollbar-color: #afbac778 #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: #fff;
 }
 
 /* Adjust layout to account for sidebar */

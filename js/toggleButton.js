@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Hide editor or perform other actions
             } else if (selectedOption === 'editor') {
                 document.querySelector('.chat-container').style.display = 'none';
-                document.querySelector('.editor-area').style.display = 'flex';
+                document.querySelector('.editor-area').style.display = 'block';
                 // Show editor or perform other actions
             }
         });
