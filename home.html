@@ -59,9 +59,15 @@
         </div>
 
         <div id="editor-area" class="editor-area">
-            <textarea id="editor-textarea" placeholder="Write your Python code here..."></textarea>
+            <textarea id="editor-textarea" placeholder="Write your Python code here...">class Car:
+                def __init__(self, brand):
+                    self.brand = brand
+            
+                def stop:
+                    pass
+            </textarea>
             <div class="generated" id="generated">
-                <p></p>
+                <p><span class="highlight-comment"># Modify the code in the upper textarea</span><br><br>>> <span class="highlight-class">class </span>Car:<br><span class="tab-space"></span><span class="highlight-def">def </span>__init__(<span class="highlight-self">self</span>, brand):<br><span class="tab-space"></span><span class="tab-space"></span>self.brand = brand<br><br><span class="tab-space"></span><span class="highlight-def">def </span>stop:<br><span class="tab-space"></span><span class="tab-space"></span><span class="highlight-pass">pass</span><br></p>
             </div>
         </div>
     </div>

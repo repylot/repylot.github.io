@@ -238,6 +238,10 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+.highlight-comment {
+    color: rgb(22, 124, 44);
+}
+
 .tab-space {
     display: inline-block;
     width: 4em; /* Width of a tab space; adjust as needed */
