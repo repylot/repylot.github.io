@@ -200,7 +200,7 @@ a {
 
     .overlay {
         width: 100%;
-        transform: translateX(0);
+        transform: translateX(100%);
     }
 
     .sign-up-container, .sign-in-container {
@@ -208,30 +208,6 @@ a {
         transform: translateX(0);
     }
 
-    .container.right-panel-active .overlay-container {
-        transform: translateY(-100%);
-    }
-
-    .container.right-panel-active .overlay {
-        transform: translateY(50%);
-    }
-
-    .overlay-left, .overlay-right {
-        transform: translateY(0);
-    }
-
-    .container.right-panel-active .overlay-left {
-        transform: translateY(0);
-    }
-
-    .container.right-panel-active .overlay-right {
-        transform: translateY(50%);
-    }
-
-    .sign-up-container, .sign-in-container {
-        width: 100%;
-        transform: translateY(0);
-    }
 
     .container.right-panel-active .sign-in-container {
         transform: translateY(100%);
@@ -247,6 +223,14 @@ a {
 
     .a-signup-mov {
         display: flex;
+    }
+
+    .sign-in-container {
+        display: none;
+    }
+
+    .overlay-left {
+        display: none;
     }
 }
 
