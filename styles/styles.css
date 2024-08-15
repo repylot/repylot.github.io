@@ -1,0 +1,360 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh;
+    margin: 0;
+}
+
+/* Vertical Sidebar Menu */
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 60px;
+    height: 100%; /* Full height of the viewport */
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 900; /* Lower z-index to ensure it's behind the header */
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    font-size: 24px;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background-color: #444;
+    border-radius: 8px;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the screen */
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    z-index: 1000; /* Higher z-index to ensure it's in front of the sidebar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo img {
+    height: 30px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Chat Wrapper */
+.chat-wrapper {
+    position: fixed;
+    width: 65%; /* Adjust width if needed */
+    max-width: 70%; /* Adjust width if needed */
+    margin-top: 90px;
+}
+
+/* Chat Container */
+.chat-container {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 70vh; /* Adjust height */
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Toggle Button Styles */
+.toggle-container {
+    position: absolute;
+    top: -40px; /* Adjust based on your design */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001; /* Ensure it’s above the chat container */
+}
+
+.toggle-button {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 150px;
+    background-color: #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-option {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-option.active {
+    background-color: #a74439;
+    color: #ffffff;
+}
+
+.toggle-option:not(.active):hover {
+    background-color: #f0f0f0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Editor Area */
+.editor-area {
+    display: none; /* Initially hidden */
+    padding: 10px;
+    border-top: 1px solid #eaeaea;
+    background-color: #f9f9f9;
+    height: 70vh;
+    margin: 20px auto;
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+.editor-area textarea {
+    width: 100%;
+    height: calc(100% - 50px); /* Adjust height to leave space for the save button */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border: transparent;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    scrollbar-color: #afbac778 #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.editor-area textarea:focus {
+    outline: none;
+}
+
+.editor-area button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.editor-area button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjust layout to account for sidebar */
+body {
+    padding-left: 60px; /* Adjust for sidebar */
+}
+
+.chat-box {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    max-width: 80%;
+    word-wrap: break-word; /* Ensures long words break and wrap properly */
+    overflow-wrap: break-word; /* Ensures that long words or URLs break properly */
+    opacity: 0;
+    animation: fadeInUp 0.3s ease forwards;
+    white-space: pre-wrap; /* Preserves line breaks and whitespace */
+}
+
+/* Ensure user messages are styled distinctly */
+.user-message {
+    background-color: #c38078;
+    color: #ffffff;
+    align-self: flex-end;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+.user-message:hover {
+    background-color: #bea5a2;
+    transition: background-color 0.6s, color 0.6s;
+}
+
+/* Ensure bot messages are styled distinctly */
+.bot-message {
+    background-color: #eaeaea;
+    color: #333;
+    align-self: flex-start;
+}
+
+/* Estilo para el contenedor del chat */
+.chat-box {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: thin; /* Para navegadores basados en Mozilla */
+    scrollbar-color: #afbac778 #f0f0f0; /* Color del pulgar y del fondo en Firefox */
+}
+
+/* Personalización de la scrollbar para navegadores basados en WebKit */
+.chat-box::-webkit-scrollbar {
+    width: 8px; /* Ancho de la scrollbar */
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Color de fondo de la scrollbar */
+    border-radius: 10px; /* Bordes redondeados del track */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #afbac778; /* Color del pulgar de la scrollbar */
+    border-radius: 10px; /* Bordes redondeados del pulgar */
+    border: 2px solid #f0f0f0; /* Espacio alrededor del pulgar */
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background-color: #c38078; /* Color del pulgar en hover */
+}
+
+/* Firefox scrollbar customization */
+.chat-box {
+    scrollbar-width: thin; /* Ancho de la scrollbar */
+    scrollbar-color: #afbac778 #f0f0f0; /* Color del pulgar y del fondo */
+}
+
+
+.edit-button {
+    color: #a74439; /* Change the icon color */
+    background-color: #fff; /* White background */
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    align-self: center;
+    padding: 5px; /* Add padding for spacing */
+    border-radius: 50%; /* Fully rounded corners */
+    border: 1px solid #a74439; /* Optional: Add a border matching the icon color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+}
+
+.edit-button:hover {
+    color: #9a9898; /* Darker color on hover */
+    background-color: #eaeaea; /* Light grey background on hover */
+}
+
+.save-button {
+    color: #a74439; /* Change the icon color */
+    background-color: #dddddd; /* White background */
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    align-self: center;
+    padding: 5px; /* Add padding for spacing */
+    border-radius: 50%; /* Fully rounded corners */
+    border: 1px solid #a74439; /* Optional: Add a border matching the icon color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    border-top: 1px solid #eaeaea;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.chat-input button {
+    background-color: #a74439;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #8e9cab;
+}
