@@ -9,7 +9,7 @@ signUpButton.addEventListener('click', () => {
 });
 
 readySignUpButton.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    window.location.href = 'home.html';
 });
 
 signInButton.addEventListener('click', () => {
