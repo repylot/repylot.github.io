@@ -1,73 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RePylot: Online Chat</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <!-- Include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+    <title>RePylot: Account Login</title>
+    <link rel="stylesheet" href="styles/form_styles.css">
     <link rel="icon" href="resources/repylot_logo.webp" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-pFbGHqD1zWAPKNvP4ZwbUpdyNYcJlHEJ48FqE8vV0Nxt9Q3J8JRLVjBNkeCzksMTqaR1zUmFIE5yEuqf4d8CIQ==" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="#python"><i class="devicon-python-plain"></i></a></li>
-            <li><a href="#javascript"><i class="devicon-javascript-plain"></i></a></li>
-            <li><a href="#java"><i class="devicon-java-plain"></i></a></li>
-            <li><a href="#cpp"><i class="devicon-cplusplus-plain"></i></a></li>
-            <li><a href="#ruby"><i class="devicon-ruby-plain"></i></a></li>
-        </ul>
-    </div>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="resources/repylot_logo.webp" alt="Logo">
-            </div>
-            <ul>
-                <li><a href="https://github.com/repylot/CodeGenerators">GitHub</a></li>
-                <li><a href="#home">How to use</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="login.html">Log In <i class="fas fa-sign-in-alt"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Chat Wrapper -->
-    <div class="chat-wrapper">
-        <!-- Toggle Button -->
-        <div class="toggle-container">
-            <div class="toggle-button">
-                <div class="toggle-option active" data-option="chat">Chat</div>
-                <div class="toggle-option" data-option="editor">Editor</div>
-            </div>
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
         </div>
-
-        <!-- Chat Container -->
-        <div class="chat-container">
-            <div id="chat-box" class="chat-box">
-                <!-- Messages will appear here -->
-            </div>
-            <div class="chat-input">
-                <input type="text" id="message-input" placeholder="Type your message...">
-                <button id="send-button">Send</button>
-            </div>
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button id="sign-up-ready" type="button">Sign Up</button>
+            </form>
         </div>
-
-        <div id="editor-area" class="editor-area">
-            <textarea id="editor-textarea" placeholder="Write your Python code here..."></textarea>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="bt-in" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <br>
+                    <br>
+                    <img src="resources/repylot_logo.webp" width="50px" height="50px"/>
+                    <br>
+                    <br>
+                    <a>Haven't an account yet? Sign-Up now!</a>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
         </div>
     </div>
-    
-
-    <script src="js/generateAnswer.js"></script>
-    <script src="js/editMessage.js"></script>
-    <script src="js/saveMessageButton.js"></script>
-    <script src="js/toggleButton.js"></script>
-    <script src="js/editor.js"></script>
+    <script src="js/signUpButton.js"></script>
 </body>
 </html>
