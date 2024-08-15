@@ -77,6 +77,10 @@ a {
     margin-top: 15px;
 }
 
+.a-signup-mov {
+    display: none;
+}
+
 .overlay-container {
     position: absolute;
     top: 0;
@@ -239,6 +243,10 @@ a {
         transform: translateY(0);
         opacity: 1;
         z-index: 5;
+    }
+
+    .a-signup-mov {
+        display: flex;
     }
 }
 
