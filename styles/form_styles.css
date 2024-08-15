@@ -1,3 +1,5 @@
+/* Estilos iniciales */
+
 /* Basic reset */
 * {
     margin: 0;
@@ -168,4 +170,92 @@ a {
     transform: translateX(100%);
     opacity: 0;
     z-index: 1;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .container {
+        width: 100%;
+        min-height: 600px;
+    }
+
+    .overlay-container {
+        width: 100%;
+        left: 0;
+        transform: translateX(0%);
+    }
+
+    .overlay-panel {
+        width: 100%;
+    }
+
+    .overlay {
+        width: 100%;
+        transform: translateX(0);
+    }
+
+    .sign-up-container, .sign-in-container {
+        width: 100%;
+        transform: translateX(0);
+    }
+
+    .container.right-panel-active .overlay-container {
+        transform: translateY(-100%);
+    }
+
+    .container.right-panel-active .overlay {
+        transform: translateY(50%);
+    }
+
+    .overlay-left, .overlay-right {
+        transform: translateY(0);
+    }
+
+    .container.right-panel-active .overlay-left {
+        transform: translateY(0);
+    }
+
+    .container.right-panel-active .overlay-right {
+        transform: translateY(50%);
+    }
+
+    .sign-up-container, .sign-in-container {
+        width: 100%;
+        transform: translateY(0);
+    }
+
+    .container.right-panel-active .sign-in-container {
+        transform: translateY(100%);
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .container.right-panel-active .sign-up-container {
+        transform: translateY(0);
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        padding: 0 20px;
+    }
+
+    input, button {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+
+    .overlay-panel {
+        padding: 0 20px;
+    }
 }
