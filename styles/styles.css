@@ -338,6 +338,10 @@ body {
     border-top: 1px solid #eaeaea;
 }
 
+.chat-input input:focus {
+    outline: none;
+}
+
 .chat-input input {
     flex-grow: 1;
     border: none;
